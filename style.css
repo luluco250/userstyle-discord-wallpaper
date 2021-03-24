@@ -1,0 +1,41 @@
+@-moz-document regexp(".*discord.com/channels/.*") {
+
+:root {
+	/* Configuration */
+	--backcolor: black;
+	--wallpaper: url("https://picsum.photos/1920/1080");
+	--wallpaper-opacity: 0.5;
+	--wallpaper-blur: 0.3rem;
+
+	/* Discord overrides */
+	--background-primary: transparent;
+	--background-secondary: transparent;
+	--background-secondary-alt: transparent;
+	--background-tertiary: transparent;
+}
+
+body::before {
+	--blur-padding: calc(-2 * var(--wallpaper-blur));
+	content: " ";
+	background: var(--wallpaper);
+	background-position: center;
+	background-size: cover;
+	opacity: var(--wallpaper-opacity);
+	filter: blur(var(--wallpaper-blur));
+	position: absolute;
+	left: var(--blur-padding);
+	top: var(--blur-padding);
+	right: var(--blur-padding);
+	bottom: var(--blur-padding);
+}
+
+body {
+	background: var(--backcolor);
+}
+
+/* Maybe there's a more generic way to select this? */
+.container-1D34oG {
+	background-color: transparent !important;
+}
+
+}
